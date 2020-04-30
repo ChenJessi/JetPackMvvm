@@ -1,0 +1,13 @@
+
+package com.chen.jetpackmvvm.ext
+
+import java.lang.reflect.ParameterizedType
+
+/**
+ * @author Created by CHEN on 2020/4/30
+ * @email 188669@163.com
+ */
+@Suppress("UNCHECKED_CAST")
+fun <T> getClazz(obj: Any): T {
+    return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as T
+}
