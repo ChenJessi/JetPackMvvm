@@ -21,15 +21,16 @@ abstract class BaseVmDbActivity <VM : ViewModel, DB : ViewDataBinding> : AppComp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mDatabind = initViewDataBinding()
+        initViewDataBinding()
         mViewModel = initViewModel()
         initView()
         initListener()
         initData()
     }
 
-    private fun initViewDataBinding() : DB{
-        return DataBindingUtil.setContentView(this, getLayoutId())
+    private fun initViewDataBinding() {
+        mDatabind = DataBindingUtil.setContentView(this, getLayoutId())
+        mDatabind.lifecycleOwner = this
     }
 
     private fun initViewModel() : VM{
