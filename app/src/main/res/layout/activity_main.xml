@@ -10,9 +10,6 @@
             name="click"
             type="com.chen.jetpackmvvm.MainActivity.ProxyClick" />
 
-        <variable
-            name="adapter"
-            type="androidx.recyclerview.widget.RecyclerView.Adapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

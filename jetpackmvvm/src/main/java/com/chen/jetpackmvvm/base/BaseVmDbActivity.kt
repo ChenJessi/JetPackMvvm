@@ -1,6 +1,7 @@
 package com.chen.jetpackmvvm.base
 
 import android.os.Bundle
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -34,9 +35,11 @@ abstract class BaseVmDbActivity <VM : ViewModel, DB : ViewDataBinding> : AppComp
     }
 
     private fun initViewModel() : VM{
-        return ViewModelProvider(this).get(getClazz(this) as Class<VM>)
+        return ViewModelProvider(this).get(getClazz(this))
     }
-    protected abstract fun getLayoutId() : Int
+
+    @LayoutRes
+    protected abstract fun getLayoutId() :  Int
 
     protected abstract fun initView()
 
