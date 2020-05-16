@@ -1,5 +1,6 @@
 package com.chen.jetpackmvvm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,7 +37,7 @@ class MainActivity : BaseVmDbActivity<MainViewModel, ActivityMainBinding>() {
         fun test(){
             mViewModel.title.value = "点击了"
             Log.e("JetPackMVVM", "点击了======")
-            
+            startActivity(Intent(this@MainActivity, ListActivity::class.java))
         }
         fun test1(view : View){
             mViewModel.title.value = "点击了2"

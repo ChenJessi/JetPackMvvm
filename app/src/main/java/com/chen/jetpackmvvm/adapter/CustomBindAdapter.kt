@@ -26,6 +26,7 @@ object CustomBindAdapter {
     /**
      * recyclerview
      */
+    @JvmStatic
     @BindingAdapter(value = ["adapter","layoutManager"], requireAll = false)
     fun setAdapter(recyclerView: RecyclerView, adapter: BaseBindingAdapter<*,*>, layoutManager : RecyclerView.LayoutManager) {
         recyclerView.adapter = adapter

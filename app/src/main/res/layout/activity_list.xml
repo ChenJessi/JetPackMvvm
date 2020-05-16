@@ -10,10 +10,14 @@
         <variable
             name="adapter"
             type="com.chen.jetpackmvvm.ListAdapter" />
+        <variable
+            name="manager"
+            type="androidx.recyclerview.widget.LinearLayoutManager" />
     </data>
 
     <androidx.recyclerview.widget.RecyclerView
         adapter="@{adapter}"
+        layoutManager="@{manager}"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 
-abstract class BaseBindingAdapter<M, DB : ViewDataBinding>(var mContext : Context) : RecyclerView.Adapter<BaseBindViewHolder>() {
+abstract class BaseBindingDBAdapter<M, DB : ViewDataBinding>(var mContext : Context) : RecyclerView.Adapter<BaseBindViewHolder>() {
 
     protected open var mList = ArrayList<M>()
 
@@ -26,12 +26,12 @@ abstract class BaseBindingAdapter<M, DB : ViewDataBinding>(var mContext : Contex
     }
 
     override fun onBindViewHolder(holder: BaseBindViewHolder, position: Int) {
-        val binding : ViewDataBinding? = getBinding(holder.itemView)
+        val binding : DB? = getBinding(holder.itemView)
         onBindVH(binding ,holder, position)
         binding?.executePendingBindings()
     }
 
-    abstract fun onBindVH(binding: ViewDataBinding?, holder: ViewHolder, position: Int)
+    abstract fun onBindVH(binding: DB?, holder: ViewHolder, position: Int)
 
     /**
      * 根据type 获取布局
