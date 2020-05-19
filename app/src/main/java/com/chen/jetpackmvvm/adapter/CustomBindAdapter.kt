@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.chen.jetpackmvvm.base.BaseBindingAdapter
+import com.chen.jetpackmvvm.base.BaseBindingDBAdapter
 import com.chen.jetpackmvvm.utils.GlideApp
 
 
@@ -28,7 +29,7 @@ object CustomBindAdapter {
      */
     @JvmStatic
     @BindingAdapter(value = ["adapter","layoutManager"], requireAll = false)
-    fun setAdapter(recyclerView: RecyclerView, adapter: BaseBindingAdapter<*,*>, layoutManager : RecyclerView.LayoutManager) {
+    fun setAdapter(recyclerView: RecyclerView, adapter: BaseBindingDBAdapter<*, *>, layoutManager : RecyclerView.LayoutManager) {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
     }

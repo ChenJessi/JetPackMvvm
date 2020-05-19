@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 
-abstract class BaseBindingDBAdapter<M, DB : ViewDataBinding>(var mContext : Context) : RecyclerView.Adapter<BaseBindViewHolder>() {
+abstract class BaseBindingDBAdapter<M, DB : ViewDataBinding>(var context : Context) : RecyclerView.Adapter<BaseBindViewHolder>() {
 
     protected open var mList = ArrayList<M>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseBindViewHolder {
-        val binding = DataBindingUtil.inflate<ViewDataBinding>(LayoutInflater.from(mContext), getLayoutResId(viewType), parent, false)
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(LayoutInflater.from(context), getLayoutResId(viewType), parent, false)
         return BaseBindViewHolder(binding.root)
     }
 
