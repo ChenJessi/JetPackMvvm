@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import com.chen.jetpackmvvm.base.BaseActivity
 import com.chen.jetpackmvvm.base.BaseVmDbActivity
-import com.chen.jetpackmvvm.data.ChaptersData
 import com.chen.jetpackmvvm.databinding.ActivityMainBinding
 import com.chen.jetpackmvvm.retrofit.RetrofitManager
 import kotlinx.coroutines.*
@@ -18,7 +18,7 @@ import okhttp3.internal.threadName
 import okhttp3.internal.wait
 import java.util.*
 
-class MainActivity : BaseVmDbActivity<MainViewModel, ActivityMainBinding>() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main

@@ -35,7 +35,7 @@ abstract class BaseVmDbActivity <VM : ViewModel, DB : ViewDataBinding> : AppComp
     }
 
     private fun initViewModel() : VM{
-        return ViewModelProvider(this).get(getClazz(this))
+        return ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(getClazz(this))
     }
 
     @LayoutRes

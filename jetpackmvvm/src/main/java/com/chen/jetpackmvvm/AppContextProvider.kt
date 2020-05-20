@@ -11,7 +11,7 @@ class AppContextProvider : ContentProvider() {
           lateinit var mContext: Context
     }
     override fun onCreate(): Boolean {
-        mContext = context!!
+        mContext = this.context!!
         return true
     }
 
