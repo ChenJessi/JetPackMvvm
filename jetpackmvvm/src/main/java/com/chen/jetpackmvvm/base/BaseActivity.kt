@@ -12,7 +12,5 @@ import androidx.lifecycle.ViewModel
  */
 abstract class BaseActivity <VM : ViewModel, DB : ViewDataBinding> : BaseVmDbActivity<VM, DB>() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-    }
+
 }

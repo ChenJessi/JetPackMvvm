@@ -3,10 +3,12 @@ package com.chen.jetpackmvvm
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chen.jetpackmvvm.base.BaseActivity
+import com.chen.jetpackmvvm.base.BaseSupportActivity
+import com.chen.jetpackmvvm.base.BaseSupportFragment
 import com.chen.jetpackmvvm.base.BaseVmDbActivity
 import com.chen.jetpackmvvm.databinding.ActivityListBinding
 
-class ListActivity : BaseActivity<ListViewModel, ActivityListBinding>() {
+class ListActivity : BaseSupportActivity<ListViewModel, ActivityListBinding>() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_list
