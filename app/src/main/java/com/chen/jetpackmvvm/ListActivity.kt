@@ -1,5 +1,7 @@
 package com.chen.jetpackmvvm
 
+import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chen.jetpackmvvm.base.BaseActivity
@@ -7,6 +9,7 @@ import com.chen.jetpackmvvm.base.BaseSupportActivity
 import com.chen.jetpackmvvm.base.BaseSupportFragment
 import com.chen.jetpackmvvm.base.BaseVmDbActivity
 import com.chen.jetpackmvvm.databinding.ActivityListBinding
+import com.chen.jetpackmvvm.event.LiveDataBus
 
 class ListActivity : BaseSupportActivity<ListViewModel, ActivityListBinding>() {
 
@@ -24,6 +27,10 @@ class ListActivity : BaseSupportActivity<ListViewModel, ActivityListBinding>() {
                 i++
             }
         }
+
+        LiveDataBus.get().with<String>("test").observerSticky(this, Observer {
+            Log.e("MainActivity","LiveDataBus   observe  : $it")
+        },true)
     }
 
     override fun initListener() {
