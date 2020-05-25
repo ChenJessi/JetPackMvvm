@@ -28,7 +28,7 @@ class ListActivity : BaseSupportActivity<ListViewModel, ActivityListBinding>() {
             }
         }
 
-        LiveDataBus.get().with<String>("test").observerSticky(this, Observer {
+        LiveDataBus.with<String>("test").observerSticky(this, Observer {
             Log.e("MainActivity","LiveDataBus   observe  : $it")
         },true)
     }

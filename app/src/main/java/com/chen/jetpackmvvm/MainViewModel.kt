@@ -1,9 +1,13 @@
 package com.chen.jetpackmvvm
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.NavHostFragment
 import com.chen.jetpackmvvm.base.BaseViewModel
+import com.chen.jetpackmvvm.data.HttpResult
 import com.chen.jetpackmvvm.ext.request
 import com.chen.jetpackmvvm.service.RetrofitAPI
+import kotlinx.coroutines.*
 
 class MainViewModel() : BaseViewModel() {
     var title = MutableLiveData<String>("title")
@@ -15,14 +19,20 @@ class MainViewModel() : BaseViewModel() {
      * 正式环境requestmodel 应 和数据 viewmodel 分离
      */
     fun testRequest(){
-        request(
-            { RetrofitAPI.getAPI.getChapters()},
+        /**
+         * http请求
+         */
+        request({
+                RetrofitAPI.getAPI.getChapters()
+            },
             {
                 title.postValue(it)
             },{
                 title.postValue(it.message)
             })
     }
+
+
 
 }
 
