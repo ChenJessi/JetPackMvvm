@@ -30,6 +30,7 @@
             android:layout_height="50dp"
             android:text="Hello World!"
             android:gravity="center"
+            android:textColor="?android:attr/textColorPrimary"
             android:onClick="@{(view)->click.test1(view)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
