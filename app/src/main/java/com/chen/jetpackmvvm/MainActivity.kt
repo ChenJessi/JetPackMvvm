@@ -19,6 +19,7 @@ import kotlin.coroutines.suspendCoroutine
 
 
 class MainActivity : BaseSupportActivity<MainViewModel, ActivityMainBinding>(){
+    var job = Job()
     override fun getLayoutId(): Int {
         return R.layout.activity_main
     }
@@ -29,7 +30,7 @@ class MainActivity : BaseSupportActivity<MainViewModel, ActivityMainBinding>(){
     }
 
     override fun initListener() {
-    
+        job.cancel()
     }
 
     override fun initData() {
@@ -42,11 +43,15 @@ class MainActivity : BaseSupportActivity<MainViewModel, ActivityMainBinding>(){
 
     }
 
-    suspend fun a(){
-        withContext(Dispatchers.IO){}
 
+    suspend fun test() = suspendCoroutine<String> {
+
+        if (true){
+            it.resume("success")
+        } else {
+            it.resumeWithException(Exception())
+        }
     }
-
 
     inner class ProxyClick{
         fun test(){
@@ -69,7 +74,6 @@ class MainActivity : BaseSupportActivity<MainViewModel, ActivityMainBinding>(){
 //            }
 
         }
-
 
     }
 
