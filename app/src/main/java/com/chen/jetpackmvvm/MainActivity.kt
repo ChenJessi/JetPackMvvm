@@ -74,7 +74,6 @@ class MainActivity : BaseSupportActivity<MainViewModel, ActivityMainBinding>(){
 //            }
 
         }
-
     }
 
 //    fun isDarkTheme(context: Context): Boolean {
